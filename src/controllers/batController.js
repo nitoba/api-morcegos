@@ -2,18 +2,18 @@ const Morcegos = require('../models/batModel');
 
 module.exports = {
 
-    async index(req, res){
+    async index(req, res) {
 
         const bats = await Morcegos.find();
         return res.json(bats);
     },
 
-    async item(req, res){
+    async item(req, res) {
         const item = await Morcegos.findById(req.params.id);
         return res.json(item);
     },
 
-    async store(req, res){
+    async store(req, res) {
 
         const { especie, familia, distgeo, habalim, fordent, repro, mododevida, image } = req.body;
 
@@ -29,5 +29,5 @@ module.exports = {
         });
 
         return res.json(post);
-    } 
+    }
 };
