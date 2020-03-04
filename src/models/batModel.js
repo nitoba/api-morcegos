@@ -3,7 +3,11 @@ const mongoose = require('mongoose');
 const BatSchema = new mongoose.Schema({
     especie: String,
     familia: String,
-    distgeo: String,
+    distgeo: {
+        type: Object,
+        image: String,
+        description: String,
+    },
     habalim: String,
     fordent: {
         type: Object,
@@ -14,7 +18,7 @@ const BatSchema = new mongoose.Schema({
     mododevida: String,
     image: String,
 },
-{collection:'Dados Morcegos'}
+    { collection: 'Dados Morcegos' }
 );
 
 
